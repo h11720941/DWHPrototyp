@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="FACT_SHEET_IST" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="FACT_SHEET_IST"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="T_FACT_IST">
+    <resourceUri>T_FACT_IST</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="AD_ID"/>
+      <viewAttribute id="APARTMENT_ID"/>
+      <viewAttribute id="CONTACT_PERSON_ID"/>
+      <viewAttribute id="CHRONOLOGY_ID"/>
+      <viewAttribute id="DATA_SOURCE_ID"/>
+      <viewAttribute id="CONSUMPTION_ID"/>
+      <viewAttribute id="CHARACTERISTIC_ID"/>
+      <viewAttribute id="ROOM_COUNT"/>
+      <viewAttribute id="LIVING_SPACE"/>
+      <viewAttribute id="TOTAL_AMOUNT"/>
+      <viewAttribute id="OPERATING_COST"/>
+      <viewAttribute id="HEATING_COST"/>
+      <viewAttribute id="DEPOSIT"/>
+      <viewAttribute id="PricePerSquareMeter"/>
+      <viewAttribute id="KEY_FIGURES_ID"/>
+      <viewAttribute id="ADRESS_ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="T_FACT_IST"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="APARTMENT_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="APARTMENT_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="APARTMENT_ID"/>
+    </attribute>
+    <attribute id="CONTACT_PERSON_ID_1" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONTACT_PERSON_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CONTACT_PERSON_ID"/>
+    </attribute>
+    <attribute id="CHRONOLOGY_ID_1" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHRONOLOGY_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CHRONOLOGY_ID"/>
+    </attribute>
+    <attribute id="DATA_SOURCE_ID_1" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATA_SOURCE_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DATA_SOURCE_ID"/>
+    </attribute>
+    <attribute id="CONSUMPTION_ID_1" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONSUMPTION_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CONSUMPTION_ID"/>
+    </attribute>
+    <attribute id="KEY_FIGURES_ID" order="6" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KEY_FIGURES_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KEY_FIGURES_ID"/>
+    </attribute>
+    <attribute id="ADRESS_ID_1" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADRESS_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ADRESS_ID"/>
+    </attribute>
+    <attribute id="AD_ID" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AD_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="AD_ID"/>
+    </attribute>
+    <attribute id="CHARACTERISTIC_ID_1" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHARACTERISTIC_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CHARACTERISTIC_ID"/>
+    </attribute>
+    <attribute id="CHARACTERISTIC_ID$local">
+      <descriptions defaultDescription="CHARACTERISTIC_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CHARACTERISTIC_ID"/>
+    </attribute>
+    <attribute id="CONSUMPTION_ID$local">
+      <descriptions defaultDescription="CONSUMPTION_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CONSUMPTION_ID"/>
+    </attribute>
+    <attribute id="CONTACT_PERSON_ID$local">
+      <descriptions defaultDescription="CONTACT_PERSON_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CONTACT_PERSON_ID"/>
+    </attribute>
+    <attribute id="ADRESS_ID$local">
+      <descriptions defaultDescription="ADRESS_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="ADRESS_ID"/>
+    </attribute>
+    <attribute id="DATA_SOURCE_ID$local">
+      <descriptions defaultDescription="DATA_SOURCE_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DATA_SOURCE_ID"/>
+    </attribute>
+    <attribute id="CHRONOLOGY_ID$local">
+      <descriptions defaultDescription="CHRONOLOGY_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CHRONOLOGY_ID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="ROOM_COUNT" order="10" aggregationType="avg" measureType="simple">
+      <descriptions defaultDescription="ROOM_COUNT"/>
+      <measureMapping columnObjectName="Projection_1" columnName="ROOM_COUNT"/>
+    </measure>
+    <measure id="LIVING_SPACE" order="11" aggregationType="avg" measureType="simple">
+      <descriptions defaultDescription="LIVING_SPACE"/>
+      <measureMapping columnObjectName="Projection_1" columnName="LIVING_SPACE"/>
+    </measure>
+    <measure id="TOTAL_AMOUNT" order="12" aggregationType="avg" measureType="simple">
+      <descriptions defaultDescription="TOTAL_AMOUNT"/>
+      <measureMapping columnObjectName="Projection_1" columnName="TOTAL_AMOUNT"/>
+    </measure>
+    <measure id="PricePerSquareMeter" order="13" aggregationType="avg" measureType="simple">
+      <descriptions defaultDescription="PricePerSquareMeter"/>
+      <measureMapping columnObjectName="Projection_1" columnName="PricePerSquareMeter"/>
+    </measure>
+    <measure id="OPERATING_COST" order="14" aggregationType="avg" measureType="simple">
+      <descriptions defaultDescription="OPERATING_COST"/>
+      <measureMapping columnObjectName="Projection_1" columnName="OPERATING_COST"/>
+    </measure>
+    <measure id="HEATING_COST" order="15" aggregationType="avg" measureType="simple">
+      <descriptions defaultDescription="HEATING_COST"/>
+      <measureMapping columnObjectName="Projection_1" columnName="HEATING_COST"/>
+    </measure>
+    <measure id="DEPOSIT" order="16" aggregationType="avg" measureType="simple">
+      <descriptions defaultDescription="DEPOSIT"/>
+      <measureMapping columnObjectName="Projection_1" columnName="DEPOSIT"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+  <sharedDimensions>
+    <logicalJoin associatedObjectUri="AMENITY_DIM">
+      <attributes>
+        <attributeRef>CHARACTERISTIC_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>CHARACTERISTIC_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="C1_1" joinType="inner" joinOperator="Equal"/>
+      <temporalJoinProperties/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+    <logicalJoin associatedObjectUri="CONSUMPTION_DIM">
+      <attributes>
+        <attributeRef>CONSUMPTION_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>CONSUMPTION_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="C1_1" joinType="inner" joinOperator="Equal"/>
+      <temporalJoinProperties/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+    <logicalJoin associatedObjectUri="CONTACT_PERSON_DIM">
+      <attributes>
+        <attributeRef>CONTACT_PERSON_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>CONTACT_PERSON_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="C1_1" joinType="inner" joinOperator="Equal"/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+    <logicalJoin associatedObjectUri="PLACE_DIM">
+      <attributes>
+        <attributeRef>ADRESS_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>ADRESS_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="C1_1" joinType="inner" joinOperator="Equal"/>
+      <temporalJoinProperties/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+    <logicalJoin associatedObjectUri="SOURCE_DIM">
+      <attributes>
+        <attributeRef>DATA_SOURCE_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>DATA_SOURCE_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="C1_1" joinType="inner" joinOperator="Equal"/>
+      <temporalJoinProperties/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+    <logicalJoin associatedObjectUri="TIME_DIM">
+      <attributes>
+        <attributeRef>CHRONOLOGY_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>CHRONOLOGY_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="C1_1" joinType="inner" joinOperator="Equal"/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+  </sharedDimensions>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="110" y="105"/>
+    
+      <rectangleSize width="181"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="110" y="286"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="StarJoinViewNodeInput" modelObjectType="repository">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="AMENITY_DIM" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="1820" y="30"/>
+      <rectangleSize width="199"/>
+    </shape>
+    <shape modelObjectName="CONSUMPTION_DIM" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="2120" y="30"/>
+      <rectangleSize width="185"/>
+    </shape>
+    <shape modelObjectName="CONTACT_PERSON_DIM" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="2420" y="30"/>
+      <rectangleSize width="208"/>
+    </shape>
+    <shape modelObjectName="PLACE_DIM" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="2720" y="30"/>
+      <rectangleSize width="148"/>
+    </shape>
+    <shape modelObjectName="SOURCE_DIM" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="3020" y="30"/>
+      <rectangleSize width="184"/>
+    </shape>
+    <shape modelObjectName="TIME_DIM" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="3320" y="30"/>
+      <rectangleSize width="217"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="SOURCE_DIM" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="SOURCE_DIM"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="DATA_SOURCE">
+    <resourceUri>DATA_SOURCE</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel id="DATA_SOURCE">
+  <attributes>
+    <attribute id="DATA_SOURCE_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATA_SOURCE_ID"/>
+      <keyMapping columnObjectName="DATA_SOURCE" columnName="DATA_SOURCE_ID"/>
+    </attribute>
+    <attribute id="SOURCE_NAME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE_NAME"/>
+      <keyMapping columnObjectName="DATA_SOURCE" columnName="SOURCE_NAME"/>
+    </attribute>
+    <attribute id="INTERNAL_ID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INTERNAL_ID"/>
+      <keyMapping columnObjectName="DATA_SOURCE" columnName="INTERNAL_ID"/>
+    </attribute>
+    <attribute id="URL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="URL"/>
+      <keyMapping columnObjectName="DATA_SOURCE" columnName="URL"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

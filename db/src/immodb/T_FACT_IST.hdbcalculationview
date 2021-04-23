@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="T_FACT_IST" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="T_IST_FACT"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="APARTMENT">
+    <resourceUri>APARTMENT</resourceUri>
+  </DataSource>
+  <DataSource id="KEY_FIGURES_DIM">
+    <resourceUri>KEY_FIGURES_DIM</resourceUri>
+  </DataSource>
+  <DataSource id="AD_DIM">
+    <resourceUri>AD_DIM</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1_1" cardinality="C1_1" joinType="inner" multiJoinNode="Join_1" multiJoinCentralTable="AD_DIM" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="CONSUMPTION_ID" aggregationType="sum"/>
+      <viewAttribute id="CHARACTERISTIC_ID" aggregationType="sum"/>
+      <viewAttribute id="ROOM_COUNT" aggregationType="sum"/>
+      <viewAttribute id="LIVING_SPACE"/>
+      <viewAttribute id="TOTAL_AMOUNT"/>
+      <viewAttribute id="OPERATING_COST"/>
+      <viewAttribute id="HEATING_COST"/>
+      <viewAttribute id="DEPOSIT"/>
+      <viewAttribute id="PricePerSquareMeter"/>
+      <viewAttribute id="KEY_FIGURES_ID"/>
+      <viewAttribute id="ADRESS_ID" aggregationType="sum"/>
+      <viewAttribute id="APARTMENT_ID"/>
+      <viewAttribute hidden="true" id="JOIN$KEY_FIGURES_ID$KEY_FIGURES_ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="APARTMENT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CONSUMPTION_ID" source="CONSUMPTION_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHARACTERISTIC_ID" source="CHARACTERISTIC_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ROOM_COUNT" source="ROOM_COUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRESS_ID" source="ADRESS_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="APARTMENT_ID" source="APARTMENT_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KEY_FIGURES_ID$KEY_FIGURES_ID" source="KEY_FIGURES_ID"/>
+    </input>
+    <input node="KEY_FIGURES_DIM">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIVING_SPACE" source="LIVING_SPACE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_AMOUNT" source="TOTAL_AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OPERATING_COST" source="OPERATING_COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HEATING_COST" source="HEATING_COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPOSIT" source="DEPOSIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PricePerSquareMeter" source="PricePerSquareMeter"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KEY_FIGURES_ID" source="KEY_FIGURES_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$KEY_FIGURES_ID$KEY_FIGURES_ID" source="KEY_FIGURES_ID"/>
+    </input>
+    <joinAttribute name="JOIN$KEY_FIGURES_ID$KEY_FIGURES_ID"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1_2" cardinality="C1_1" joinType="inner" multiJoinNode="Join_1" multiJoinCentralTable="AD_DIM" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="CONSUMPTION_ID" aggregationType="sum"/>
+      <viewAttribute id="CHARACTERISTIC_ID" aggregationType="sum"/>
+      <viewAttribute id="ROOM_COUNT" aggregationType="sum"/>
+      <viewAttribute id="LIVING_SPACE"/>
+      <viewAttribute id="TOTAL_AMOUNT"/>
+      <viewAttribute id="OPERATING_COST"/>
+      <viewAttribute id="HEATING_COST"/>
+      <viewAttribute id="DEPOSIT"/>
+      <viewAttribute id="PricePerSquareMeter"/>
+      <viewAttribute id="KEY_FIGURES_ID"/>
+      <viewAttribute id="ADRESS_ID" aggregationType="sum"/>
+      <viewAttribute id="APARTMENT_ID"/>
+      <viewAttribute id="AD_ID"/>
+      <viewAttribute id="CONTACT_PERSON_ID"/>
+      <viewAttribute id="CHRONOLOGY_ID"/>
+      <viewAttribute id="DATA_SOURCE_ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="AD_DIM">
+      <mapping xsi:type="Calculation:AttributeMapping" target="AD_ID" source="AD_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="APARTMENT_ID" source="APARTMENT_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CONTACT_PERSON_ID" source="CONTACT_PERSON_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHRONOLOGY_ID" source="CHRONOLOGY_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATA_SOURCE_ID" source="DATA_SOURCE_ID"/>
+    </input>
+    <input node="Join_1_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CONSUMPTION_ID" source="CONSUMPTION_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHARACTERISTIC_ID" source="CHARACTERISTIC_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ROOM_COUNT" source="ROOM_COUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIVING_SPACE" source="LIVING_SPACE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_AMOUNT" source="TOTAL_AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OPERATING_COST" source="OPERATING_COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HEATING_COST" source="HEATING_COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPOSIT" source="DEPOSIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PricePerSquareMeter" source="PricePerSquareMeter"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KEY_FIGURES_ID" source="KEY_FIGURES_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRESS_ID" source="ADRESS_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="APARTMENT_ID" source="APARTMENT_ID"/>
+    </input>
+    <joinAttribute name="APARTMENT_ID"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1_2">
+  <attributes>
+    <attribute id="AD_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AD_ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="AD_ID"/>
+    </attribute>
+    <attribute id="APARTMENT_ID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="APARTMENT_ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="APARTMENT_ID"/>
+    </attribute>
+    <attribute id="CONTACT_PERSON_ID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONTACT_PERSON_ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="CONTACT_PERSON_ID"/>
+    </attribute>
+    <attribute id="CHRONOLOGY_ID" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHRONOLOGY_ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="CHRONOLOGY_ID"/>
+    </attribute>
+    <attribute id="DATA_SOURCE_ID" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATA_SOURCE_ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="DATA_SOURCE_ID"/>
+    </attribute>
+    <attribute id="CONSUMPTION_ID" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONSUMPTION_ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="CONSUMPTION_ID"/>
+    </attribute>
+    <attribute id="CHARACTERISTIC_ID" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHARACTERISTIC_ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="CHARACTERISTIC_ID"/>
+    </attribute>
+    <attribute id="KEY_FIGURES_ID" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KEY_FIGURES_ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="KEY_FIGURES_ID"/>
+    </attribute>
+    <attribute id="ADRESS_ID" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADRESS_ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="ADRESS_ID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="ROOM_COUNT" order="8" aggregationType="sum" engineAggregation="none" measureType="simple">
+      <descriptions defaultDescription="ROOM_COUNT"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="ROOM_COUNT"/>
+    </measure>
+    <measure id="LIVING_SPACE" order="9" aggregationType="sum" engineAggregation="none" measureType="simple">
+      <descriptions defaultDescription="LIVING_SPACE"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="LIVING_SPACE"/>
+    </measure>
+    <measure id="TOTAL_AMOUNT" order="10" aggregationType="sum" engineAggregation="none" measureType="simple">
+      <descriptions defaultDescription="TOTAL_AMOUNT"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="TOTAL_AMOUNT"/>
+    </measure>
+    <measure id="OPERATING_COST" order="11" aggregationType="sum" engineAggregation="none" measureType="simple">
+      <descriptions defaultDescription="OPERATING_COST"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="OPERATING_COST"/>
+    </measure>
+    <measure id="HEATING_COST" order="12" aggregationType="sum" engineAggregation="none" measureType="simple">
+      <descriptions defaultDescription="HEATING_COST"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="HEATING_COST"/>
+    </measure>
+    <measure id="DEPOSIT" order="13" aggregationType="sum" engineAggregation="none" measureType="simple">
+      <descriptions defaultDescription="DEPOSIT"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="DEPOSIT"/>
+    </measure>
+    <measure id="PricePerSquareMeter" order="14" aggregationType="sum" engineAggregation="none" measureType="simple">
+      <descriptions defaultDescription="PricePerSquareMeter"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="PricePerSquareMeter"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="195"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="AD_DIM" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput" multiJoinViewNodeName="Join_1">
+      <upperLeftCorner x="496" y="157"/>
+      <rectangleSize width="208"/>
+    </shape>
+    <shape modelObjectName="APARTMENT" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput" multiJoinViewNodeName="Join_1">
+      <upperLeftCorner x="759" y="152"/>
+      <rectangleSize width="220"/>
+    </shape>
+  
+    <shape modelObjectName="KEY_FIGURES_DIM" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput" multiJoinViewNodeName="Join_1">
+      <upperLeftCorner x="1053" y="157"/>
+      <rectangleSize width="191"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

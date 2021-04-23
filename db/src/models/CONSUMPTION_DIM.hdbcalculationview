@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CONSUMPTION_DIM" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CONSUMPTION_DIM"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="CONSUMPTION">
+    <resourceUri>CONSUMPTION</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel id="CONSUMPTION">
+  <attributes>
+    <attribute id="HWB_VALUE" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HWB_VALUE"/>
+      <keyMapping columnObjectName="CONSUMPTION" columnName="HWB_VALUE"/>
+    </attribute>
+    <attribute id="ENERGY_LABEL" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ENERGY_LABEL"/>
+      <keyMapping columnObjectName="CONSUMPTION" columnName="ENERGY_LABEL"/>
+    </attribute>
+    <attribute id="ENERGY_TYP" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ENERGY_TYP"/>
+      <keyMapping columnObjectName="CONSUMPTION" columnName="ENERGY_TYP"/>
+    </attribute>
+    <attribute id="CONSUMPTION_ID" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONSUMPTION_ID"/>
+      <keyMapping columnObjectName="CONSUMPTION" columnName="CONSUMPTION_ID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

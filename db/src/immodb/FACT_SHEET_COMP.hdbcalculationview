@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="FACT_SHEET_COMP" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" cacheInvalidationPeriod="NONE" enforceSqlExecution="false" outputViewType="Aggregation">
+<descriptions defaultDescription="FACT_SHEET_COMP"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="FACT_SHEET_IST">
+    <resourceUri>FACT_SHEET_IST</resourceUri>
+  </DataSource>
+  <DataSource id="FACT_SHEET_STAT">
+    <resourceUri>FACT_SHEET_STAT</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="LIVING_SPACE"/>
+      <viewAttribute id="ROOM_COUNT"/>
+      <viewAttribute id="TOTAL_AMOUNT"/>
+      <viewAttribute id="OPERATING_COST"/>
+      <viewAttribute id="PricePerSquareMeter"/>
+      <viewAttribute id="CHRONOLOGY_ID_1"/>
+      <viewAttribute id="DATA_SOURCE_ID_1"/>
+      <viewAttribute id="KEY_FIGURES_ID"/>
+    
+      <viewAttribute id="SOURCE_NAME"/>
+      <viewAttribute id="AD_CREATION_TIME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="FACT_SHEET_IST"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="DATA_SOURCE_ID"/>
+      <viewAttribute id="SOURCE_NAME"/>
+      <viewAttribute id="CHRONOLOGY_ID"/>
+      <viewAttribute id="AD_CREATION_TIME"/>
+      <viewAttribute id="ENTRY_CREATION_TIME"/>
+      <viewAttribute id="CHRONOLOGY_ID_1"/>
+      <viewAttribute id="KEY_FIGURES_ID"/>
+      <viewAttribute id="DATA_SOURCE_ID_1"/>
+      <viewAttribute id="LIVING_SPACE"/>
+      <viewAttribute id="TOTAL_AMOUNT"/>
+      <viewAttribute id="OPERATING_COST"/>
+      <viewAttribute id="PricePerSquareMeter"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="FACT_SHEET_STAT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="SOURCE_NAME"/>
+      <viewAttribute id="PricePerSquareMeter" aggregationType="sum"/>
+      <viewAttribute id="OPERATING_COST" aggregationType="sum"/>
+      <viewAttribute id="TOTAL_AMOUNT" aggregationType="sum"/>
+      <viewAttribute id="LIVING_SPACE" aggregationType="sum"/>
+      <viewAttribute id="SOURCE_NAME_1"/>
+      <viewAttribute id="PricePerSquareMeter_1" aggregationType="sum"/>
+      <viewAttribute id="OPERATING_COST_1" aggregationType="sum"/>
+      <viewAttribute id="TOTAL_AMOUNT_1" aggregationType="sum"/>
+      <viewAttribute id="LIVING_SPACE_1" aggregationType="sum"/>
+      <viewAttribute id="AD_CREATION_TIME"/>
+      <viewAttribute id="AD_CREATION_TIME_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_1" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE_NAME" source="SOURCE_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PricePerSquareMeter" source="PricePerSquareMeter"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OPERATING_COST" source="OPERATING_COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_AMOUNT" source="TOTAL_AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIVING_SPACE" source="LIVING_SPACE"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="SOURCE_NAME_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="PricePerSquareMeter_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OPERATING_COST_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="TOTAL_AMOUNT_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LIVING_SPACE_1" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AD_CREATION_TIME" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AD_CREATION_TIME_1" source="AD_CREATION_TIME"/>
+    </input>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="SOURCE_NAME" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="PricePerSquareMeter" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="OPERATING_COST" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="TOTAL_AMOUNT" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="LIVING_SPACE" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE_NAME_1" source="SOURCE_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PricePerSquareMeter_1" source="PricePerSquareMeter"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OPERATING_COST_1" source="OPERATING_COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_AMOUNT_1" source="TOTAL_AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIVING_SPACE_1" source="LIVING_SPACE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AD_CREATION_TIME" source="AD_CREATION_TIME"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="AD_CREATION_TIME_1" null="true" value=""/>
+    </input>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Union_1">
+  <attributes>
+    <attribute id="AD_CREATION_TIME" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AD_CREATION_TIME"/>
+      <keyMapping columnObjectName="Union_1" columnName="AD_CREATION_TIME"/>
+    </attribute>
+    <attribute id="SOURCE_NAME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE_NAME"/>
+      <keyMapping columnObjectName="Union_1" columnName="SOURCE_NAME"/>
+    </attribute>
+    <attribute id="SOURCE_NAME_1" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE_NAME"/>
+      <keyMapping columnObjectName="Union_1" columnName="SOURCE_NAME_1"/>
+    </attribute>
+    <attribute id="AD_CREATION_TIME_1" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AD_CREATION_TIME"/>
+      <keyMapping columnObjectName="Union_1" columnName="AD_CREATION_TIME_1"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="PricePerSquareMeter" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PricePerSquareMeter"/>
+      <measureMapping columnObjectName="Union_1" columnName="PricePerSquareMeter"/>
+    </measure>
+    <measure id="OPERATING_COST" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="OPERATING_COST"/>
+      <measureMapping columnObjectName="Union_1" columnName="OPERATING_COST"/>
+    </measure>
+    <measure id="TOTAL_AMOUNT" order="5" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="TOTAL_AMOUNT"/>
+      <measureMapping columnObjectName="Union_1" columnName="TOTAL_AMOUNT"/>
+    </measure>
+    <measure id="LIVING_SPACE" order="6" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LIVING_SPACE"/>
+      <measureMapping columnObjectName="Union_1" columnName="LIVING_SPACE"/>
+    </measure>
+    <measure id="PricePerSquareMeter_1" order="9" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PricePerSquareMeter"/>
+      <measureMapping columnObjectName="Union_1" columnName="PricePerSquareMeter_1"/>
+    </measure>
+    <measure id="OPERATING_COST_1" order="10" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="OPERATING_COST"/>
+      <measureMapping columnObjectName="Union_1" columnName="OPERATING_COST_1"/>
+    </measure>
+    <measure id="TOTAL_AMOUNT_1" order="11" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="TOTAL_AMOUNT"/>
+      <measureMapping columnObjectName="Union_1" columnName="TOTAL_AMOUNT_1"/>
+    </measure>
+    <measure id="LIVING_SPACE_1" order="12" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LIVING_SPACE"/>
+      <measureMapping columnObjectName="Union_1" columnName="LIVING_SPACE_1"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="100" y="105"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-106" y="183"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="322" y="183"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="176"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

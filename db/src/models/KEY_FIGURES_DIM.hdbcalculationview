@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="KEY_FIGURES_DIM" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="KEY_FIGURES_DIM"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="KEY_FIGURES">
+    <resourceUri>KEY_FIGURES</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel id="KEY_FIGURES">
+  <attributes>
+    <attribute id="KEY_FIGURES_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KEY_FIGURES_ID"/>
+      <keyMapping columnObjectName="KEY_FIGURES" columnName="KEY_FIGURES_ID"/>
+    </attribute>
+    <attribute id="LIVING_SPACE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIVING_SPACE"/>
+      <keyMapping columnObjectName="KEY_FIGURES" columnName="LIVING_SPACE"/>
+    </attribute>
+    <attribute id="TOTAL_AMOUNT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TOTAL_AMOUNT"/>
+      <keyMapping columnObjectName="KEY_FIGURES" columnName="TOTAL_AMOUNT"/>
+    </attribute>
+    <attribute id="OPERATING_COST" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OPERATING_COST"/>
+      <keyMapping columnObjectName="KEY_FIGURES" columnName="OPERATING_COST"/>
+    </attribute>
+    <attribute id="HEATING_COST" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HEATING_COST"/>
+      <keyMapping columnObjectName="KEY_FIGURES" columnName="HEATING_COST"/>
+    </attribute>
+    <attribute id="DEPOSIT" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DEPOSIT"/>
+      <keyMapping columnObjectName="KEY_FIGURES" columnName="DEPOSIT"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="PricePerSquareMeter" order="7" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="DOUBLE" expressionLanguage="SQL">
+        <formula>&quot;TOTAL_AMOUNT&quot;/&quot;LIVING_SPACE&quot;</formula>
+      </keyCalculation>
+    </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

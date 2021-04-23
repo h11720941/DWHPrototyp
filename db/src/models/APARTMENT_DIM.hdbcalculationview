@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="APARTMENT_DIM" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="APARTMENT_DIM"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="APARTMENT">
+    <resourceUri>APARTMENT</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel id="APARTMENT">
+  <attributes>
+    <attribute id="APARTMENT_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="APARTMENT_ID"/>
+      <keyMapping columnObjectName="APARTMENT" columnName="APARTMENT_ID"/>
+    </attribute>
+    <attribute id="KEY_FIGURES_ID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KEY_FIGURES_ID"/>
+      <keyMapping columnObjectName="APARTMENT" columnName="KEY_FIGURES_ID"/>
+    </attribute>
+    <attribute id="ADRESS_ID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADRESS_ID"/>
+      <keyMapping columnObjectName="APARTMENT" columnName="ADRESS_ID"/>
+    </attribute>
+    <attribute id="CONSUMPTION_ID" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONSUMPTION_ID"/>
+      <keyMapping columnObjectName="APARTMENT" columnName="CONSUMPTION_ID"/>
+    </attribute>
+    <attribute id="CHARACTERISTIC_ID" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHARACTERISTIC_ID"/>
+      <keyMapping columnObjectName="APARTMENT" columnName="CHARACTERISTIC_ID"/>
+    </attribute>
+    <attribute id="ROOM_COUNT" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ROOM_COUNT"/>
+      <keyMapping columnObjectName="APARTMENT" columnName="ROOM_COUNT"/>
+    </attribute>
+    <attribute id="CONSTRUCTION_YEAR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONSTRUCTION_YEAR"/>
+      <keyMapping columnObjectName="APARTMENT" columnName="CONSTRUCTION_YEAR"/>
+    </attribute>
+    <attribute id="CONSTRUCTION_TYPE" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONSTRUCTION_TYPE"/>
+      <keyMapping columnObjectName="APARTMENT" columnName="CONSTRUCTION_TYPE"/>
+    </attribute>
+    <attribute id="APARTMENT_CONDITION" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="APARTMENT_CONDITION"/>
+      <keyMapping columnObjectName="APARTMENT" columnName="APARTMENT_CONDITION"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

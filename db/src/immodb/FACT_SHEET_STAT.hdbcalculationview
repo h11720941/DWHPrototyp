@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="FACT_SHEET_STAT" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="FACT_SHEET_STAT"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="T_FACT_STAT">
+    <resourceUri>T_FACT_STAT</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="CHRONOLOGY_ID"/>
+      <viewAttribute id="STATISTIC_ID"/>
+      <viewAttribute id="KEY_FIGURES_ID"/>
+      <viewAttribute id="LIVING_SPACE"/>
+      <viewAttribute id="TOTAL_AMOUNT"/>
+      <viewAttribute id="OPERATING_COST"/>
+      <viewAttribute id="PricePerSquareMeter"/>
+      <viewAttribute id="DATA_SOURCE_ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="T_FACT_STAT"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="CHRONOLOGY_ID_1" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHRONOLOGY_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CHRONOLOGY_ID"/>
+    </attribute>
+    <attribute id="STATISTIC_ID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STATISTIC_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="STATISTIC_ID"/>
+    </attribute>
+    <attribute id="KEY_FIGURES_ID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KEY_FIGURES_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="KEY_FIGURES_ID"/>
+    </attribute>
+    <attribute id="DATA_SOURCE_ID_1" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATA_SOURCE_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DATA_SOURCE_ID"/>
+    </attribute>
+    <attribute id="DATA_SOURCE_ID$local">
+      <descriptions defaultDescription="DATA_SOURCE_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DATA_SOURCE_ID"/>
+    </attribute>
+    <attribute id="CHRONOLOGY_ID$local">
+      <descriptions defaultDescription="CHRONOLOGY_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CHRONOLOGY_ID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="LIVING_SPACE" order="5" aggregationType="avg" measureType="simple">
+      <descriptions defaultDescription="LIVING_SPACE"/>
+      <measureMapping columnObjectName="Projection_1" columnName="LIVING_SPACE"/>
+    </measure>
+    <measure id="TOTAL_AMOUNT" order="6" aggregationType="avg" measureType="simple">
+      <descriptions defaultDescription="TOTAL_AMOUNT"/>
+      <measureMapping columnObjectName="Projection_1" columnName="TOTAL_AMOUNT"/>
+    </measure>
+    <measure id="OPERATING_COST" order="7" aggregationType="avg" measureType="simple">
+      <descriptions defaultDescription="OPERATING_COST"/>
+      <measureMapping columnObjectName="Projection_1" columnName="OPERATING_COST"/>
+    </measure>
+    <measure id="PricePerSquareMeter" order="8" aggregationType="avg" measureType="simple">
+      <descriptions defaultDescription="PricePerSquareMeter"/>
+      <measureMapping columnObjectName="Projection_1" columnName="PricePerSquareMeter"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+  <sharedDimensions>
+    <logicalJoin associatedObjectUri="SOURCE_DIM">
+      <attributes>
+        <attributeRef>DATA_SOURCE_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>DATA_SOURCE_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="C1_1" joinType="referential" joinOperator="Equal"/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+    <logicalJoin associatedObjectUri="TIME_DIM">
+      <attributes>
+        <attributeRef>CHRONOLOGY_ID$local</attributeRef>
+      </attributes>
+      <associatedAttributeNames>
+        <attributeName>CHRONOLOGY_ID</attributeName>
+      </associatedAttributeNames>
+      <properties cardinality="C1_1" joinType="referential" joinOperator="Equal"/>
+      <associatedAttributeFeatures/>
+    </logicalJoin>
+  </sharedDimensions>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="215"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="StarJoinViewNodeInput" modelObjectType="repository">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="SOURCE_DIM" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="184"/>
+    </shape>
+    <shape modelObjectName="TIME_DIM" modelObjectNameSpace="StarJoinViewNodeSharedCV" modelObjectType="repository">
+      <upperLeftCorner x="-176" y="28"/>
+      <rectangleSize width="217"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

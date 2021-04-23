@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="PLACE_DIM" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="PLACE_DIM"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="ADRESS">
+    <resourceUri>ADRESS</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<inlineHierarchy xsi:type="Dimension:LeveledHierarchy" id="PLACE_HIER" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+  <descriptions defaultDescription="PLACE_HIER"/>
+  <unassignedMemberProperties mode="FALSE"/>
+  <levels>
+    <level levelAttribute="COUNTRY" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="COUNTRY" sortDirection="ASC"/>
+    <level levelAttribute="ZIP_CODE" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="ZIP_CODE" sortDirection="ASC"/>
+    <level levelAttribute="STREET" levelType="MDLEVEL_TYPE_REGULAR" order="3" orderAttribute="STREET" sortDirection="ASC"/>
+    <level levelAttribute="FLOOR" levelType="MDLEVEL_TYPE_REGULAR" order="4" orderAttribute="FLOOR" sortDirection="ASC"/>
+  </levels>
+</inlineHierarchy>
+
+<logicalModel id="ADRESS">
+  <attributes>
+    <attribute id="ADRESS_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADRESS_ID"/>
+      <keyMapping columnObjectName="ADRESS" columnName="ADRESS_ID"/>
+    </attribute>
+    <attribute id="COUNTRY" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COUNTRY"/>
+      <keyMapping columnObjectName="ADRESS" columnName="COUNTRY"/>
+    </attribute>
+    <attribute id="ZIP_CODE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZIP_CODE"/>
+      <keyMapping columnObjectName="ADRESS" columnName="ZIP_CODE"/>
+    </attribute>
+    <attribute id="STREET" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STREET"/>
+      <keyMapping columnObjectName="ADRESS" columnName="STREET"/>
+    </attribute>
+    <attribute id="FLOOR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FLOOR"/>
+      <keyMapping columnObjectName="ADRESS" columnName="FLOOR"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

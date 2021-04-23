@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CONTACT_PERSON_DIM" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CONTACT_PERSON_DIM"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="CONTACT_PERSON">
+    <resourceUri>CONTACT_PERSON</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel id="CONTACT_PERSON">
+  <attributes>
+    <attribute id="CONTACT_PERSON_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONTACT_PERSON_ID"/>
+      <keyMapping columnObjectName="CONTACT_PERSON" columnName="CONTACT_PERSON_ID"/>
+    </attribute>
+    <attribute id="CONTACT_INFO" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONTACT_INFO"/>
+      <keyMapping columnObjectName="CONTACT_PERSON" columnName="CONTACT_INFO"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

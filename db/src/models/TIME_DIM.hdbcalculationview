@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="TIME_DIM" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="TIME_DIM"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="CHRONOLOGY">
+    <resourceUri>CHRONOLOGY</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel id="CHRONOLOGY">
+  <attributes>
+    <attribute id="CHRONOLOGY_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHRONOLOGY_ID"/>
+      <keyMapping columnObjectName="CHRONOLOGY" columnName="CHRONOLOGY_ID"/>
+    </attribute>
+    <attribute id="AD_CREATION_TIME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AD_CREATION_TIME"/>
+      <keyMapping columnObjectName="CHRONOLOGY" columnName="AD_CREATION_TIME"/>
+    </attribute>
+    <attribute id="ENTRY_CREATION_TIME" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ENTRY_CREATION_TIME"/>
+      <keyMapping columnObjectName="CHRONOLOGY" columnName="ENTRY_CREATION_TIME"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

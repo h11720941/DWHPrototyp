@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="AMENITY_DIM" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="Amenity"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="CHARACTERISTIC">
+    <resourceUri>CHARACTERISTIC</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel id="CHARACTERISTIC">
+  <attributes>
+    <attribute id="CHARACTERISTIC_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHARACTERISTIC_ID"/>
+      <keyMapping columnObjectName="CHARACTERISTIC" columnName="CHARACTERISTIC_ID"/>
+    </attribute>
+    <attribute id="BALCONY" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BALCONY"/>
+      <keyMapping columnObjectName="CHARACTERISTIC" columnName="BALCONY"/>
+    </attribute>
+    <attribute id="BASEMENT" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BASEMENT"/>
+      <keyMapping columnObjectName="CHARACTERISTIC" columnName="BASEMENT"/>
+    </attribute>
+    <attribute id="TERRACE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TERRACE"/>
+      <keyMapping columnObjectName="CHARACTERISTIC" columnName="TERRACE"/>
+    </attribute>
+    <attribute id="PARKING_SPOT" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PARKING_SPOT"/>
+      <keyMapping columnObjectName="CHARACTERISTIC" columnName="PARKING_SPOT"/>
+    </attribute>
+    <attribute id="ELEVATOR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ELEVATOR"/>
+      <keyMapping columnObjectName="CHARACTERISTIC" columnName="ELEVATOR"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

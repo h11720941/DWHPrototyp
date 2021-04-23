@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="AD_DIM" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="AD_DIM"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="AD">
+    <resourceUri>AD</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel id="AD">
+  <attributes>
+    <attribute id="AD_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AD_ID"/>
+      <keyMapping columnObjectName="AD" columnName="AD_ID"/>
+    </attribute>
+    <attribute id="TITLE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TITLE"/>
+      <keyMapping columnObjectName="AD" columnName="TITLE"/>
+    </attribute>
+    <attribute id="CONTACT_PERSON_ID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONTACT_PERSON_ID"/>
+      <keyMapping columnObjectName="AD" columnName="CONTACT_PERSON_ID"/>
+    </attribute>
+    <attribute id="APARTMENT_ID" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="APARTMENT_ID"/>
+      <keyMapping columnObjectName="AD" columnName="APARTMENT_ID"/>
+    </attribute>
+    <attribute id="CHRONOLOGY_ID" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHRONOLOGY_ID"/>
+      <keyMapping columnObjectName="AD" columnName="CHRONOLOGY_ID"/>
+    </attribute>
+    <attribute id="DATA_SOURCE_ID" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATA_SOURCE_ID"/>
+      <keyMapping columnObjectName="AD" columnName="DATA_SOURCE_ID"/>
+    </attribute>
+  </attributes>
+  <attribute id="AD_ID" order="1" displayAttribute="true" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AD_ID"/>
+      <keyMapping columnObjectName="AD" columnName="AD_ID"/>
+    </attribute>
+    <attribute id="TITLE" order="2" displayAttribute="true" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TITLE"/>
+      <keyMapping columnObjectName="AD" columnName="TITLE"/>
+    </attribute>
+    <attribute id="CONTACT_PERSON_ID" order="3" displayAttribute="true" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONTACT_PERSON_ID"/>
+      <keyMapping columnObjectName="AD" columnName="CONTACT_PERSON_ID"/>
+    </attribute>
+    <attribute id="APARTMENT_ID" order="4" displayAttribute="true" attributeHierarchyActive="false">
+      <descriptions defaultDescription="APARTMENT_ID"/>
+      <keyMapping columnObjectName="AD" columnName="APARTMENT_ID"/>
+    </attribute>
+    <attribute id="CHRONOLOGY_ID" order="5" displayAttribute="true" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHRONOLOGY_ID"/>
+      <keyMapping columnObjectName="AD" columnName="CHRONOLOGY_ID"/>
+    </attribute>
+    <attribute id="DATA_SOURCE_ID" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATA_SOURCE_ID"/>
+      <keyMapping columnObjectName="AD" columnName="DATA_SOURCE_ID"/>
+    </attribute>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="100" y="105"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

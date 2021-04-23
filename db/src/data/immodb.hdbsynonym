@@ -1,0 +1,62 @@
+{
+  "AD": {
+    "target": {
+      "object": "AD",
+      "schema": "IMMODB"
+    }
+  },
+  "APARTMENT": {
+    "target": {
+      "object": "APARTMENT",
+      "schema": "IMMODB"
+    }
+  },
+  "STATISTIC": {
+    "target": {
+      "object": "STATISTIC",
+      "schema": "IMMODB"
+    }
+  },
+  "CONTACT_PERSON": {
+    "target": {
+      "object": "CONTACT_PERSON",
+      "schema": "IMMODB"
+    }
+  },
+  "KEY_FIGURES": {
+    "target": {
+      "object": "KEY_FIGURES",
+      "schema": "IMMODB"
+    }
+  },
+  "ADRESS": {
+    "target": {
+      "object": "ADRESS",
+      "schema": "IMMODB"
+    }
+  },
+  "CONSUMPTION": {
+    "target": {
+      "object": "CONSUMPTION",
+      "schema": "IMMODB"
+    }
+  },
+  "CHARACTERISTIC": {
+    "target": {
+      "object": "CHARACTERISTIC",
+      "schema": "IMMODB"
+    }
+  },
+  "CHRONOLOGY": {
+    "target": {
+      "object": "CHRONOLOGY",
+      "schema": "IMMODB"
+    }
+  },
+  "DATA_SOURCE": {
+    "target": {
+      "object": "DATA_SOURCE",
+      "schema": "IMMODB"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="T_FACT_STAT" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="T_FACT_STAT"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="KEY_FIGURES_DIM">
+    <resourceUri>KEY_FIGURES_DIM</resourceUri>
+  </DataSource>
+  <DataSource id="STATISTIC">
+    <resourceUri>STATISTIC</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="CHRONOLOGY_ID"/>
+      <viewAttribute id="STATISTIC_ID" aggregationType="sum"/>
+      <viewAttribute id="KEY_FIGURES_ID"/>
+      <viewAttribute id="LIVING_SPACE"/>
+      <viewAttribute id="TOTAL_AMOUNT"/>
+      <viewAttribute id="OPERATING_COST"/>
+      <viewAttribute id="PricePerSquareMeter"/>
+      <viewAttribute id="DATA_SOURCE_ID" aggregationType="sum"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="KEY_FIGURES_DIM">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KEY_FIGURES_ID" source="KEY_FIGURES_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIVING_SPACE" source="LIVING_SPACE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_AMOUNT" source="TOTAL_AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OPERATING_COST" source="OPERATING_COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PricePerSquareMeter" source="PricePerSquareMeter"/></input>
+    <input node="STATISTIC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATISTIC_ID" source="STATISTIC_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHRONOLOGY_ID" source="CHRONOLOGY_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATA_SOURCE_ID" source="DATA_SOURCE_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KEY_FIGURES_ID" source="KEY_FIGURES_ID"/>
+    </input>
+    <joinAttribute name="KEY_FIGURES_ID"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="CHRONOLOGY_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHRONOLOGY_ID"/>
+      <keyMapping columnObjectName="Join_1" columnName="CHRONOLOGY_ID"/>
+    </attribute>
+    <attribute id="STATISTIC_ID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STATISTIC_ID"/>
+      <keyMapping columnObjectName="Join_1" columnName="STATISTIC_ID"/>
+    </attribute>
+    <attribute id="DATA_SOURCE_ID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATA_SOURCE_ID"/>
+      <keyMapping columnObjectName="Join_1" columnName="DATA_SOURCE_ID"/>
+    </attribute>
+  
+    <attribute id="KEY_FIGURES_ID" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KEY_FIGURES_ID"/>
+  
+      <keyMapping columnObjectName="Join_1" columnName="KEY_FIGURES_ID"/>
+  
+    </attribute></attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="LIVING_SPACE" order="5" aggregationType="avg" measureType="simple" engineAggregation="arg">
+      <descriptions defaultDescription="LIVING_SPACE"/>
+      <measureMapping columnObjectName="Join_1" columnName="LIVING_SPACE"/>
+    </measure>
+    <measure id="TOTAL_AMOUNT" order="6" aggregationType="avg" measureType="simple" engineAggregation="arg">
+      <descriptions defaultDescription="TOTAL_AMOUNT"/>
+      <measureMapping columnObjectName="Join_1" columnName="TOTAL_AMOUNT"/>
+    </measure>
+    <measure id="OPERATING_COST" order="7" aggregationType="avg" measureType="simple" engineAggregation="arg">
+      <descriptions defaultDescription="OPERATING_COST"/>
+      <measureMapping columnObjectName="Join_1" columnName="OPERATING_COST"/>
+    </measure>
+    <measure id="PricePerSquareMeter" order="8" aggregationType="avg" measureType="simple" engineAggregation="arg">
+      <descriptions defaultDescription="PricePerSquareMeter"/>
+      <measureMapping columnObjectName="Join_1" columnName="PricePerSquareMeter"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="197"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="KEY_FIGURES_DIM" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="530" y="22"/>
+      <rectangleSize width="191"/>
+    </shape>
+    <shape modelObjectName="STATISTIC" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="1027" y="-222"/>
+      <rectangleSize width="184"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>
